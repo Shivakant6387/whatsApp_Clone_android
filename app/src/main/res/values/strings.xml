@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">WhatsApp Clone</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="calls_fragment">Calls fragment</string>
+    <string name="chats_fragment">Chats fragment</string>
+    <string name="status_fragment">Status fragment</string>
+
 </resources>
