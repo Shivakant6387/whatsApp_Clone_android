@@ -42,9 +42,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.settings) {
-            Toast.makeText(this, "setting is clicked", Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(this, "setting is clicked", Toast.LENGTH_SHORT).show();
+            Intent intent=new Intent(MainActivity.this, SettingActivity.class);
+            startActivity(intent);
         } else if (item.getItemId() == R.id.groupChat) {
-            Toast.makeText(this, "Group Chat is Started", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "Group Chat is Started", Toast.LENGTH_SHORT).show();
+            Intent intent=new Intent(MainActivity.this, groupchatActivity.class);
+            startActivity(intent);
 
         } else if (item.getItemId() == R.id.logout) {
             //Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show();

@@ -31,14 +31,7 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         mAuth=FirebaseAuth.getInstance();
         database=FirebaseDatabase.getInstance();
-        // Get a reference to the ActionBar
-        ActionBar actionBar = getSupportActionBar();
-
-        // Check if the ActionBar is not null before using it
-        if (actionBar != null) {
-            // Now you can call methods on the ActionBar
-            actionBar.hide();
-        }
+        getSupportActionBar().hide();
         progressDialog=new ProgressDialog(SignUpActivity.this);
         progressDialog.setTitle("Creating Account");
         progressDialog.setMessage("We are creating  your account.");

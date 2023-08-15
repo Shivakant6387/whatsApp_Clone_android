@@ -41,15 +41,7 @@ public class SignInActivity extends AppCompatActivity {
         //setContentView(R.layout.activity_sign_in);
         binding = ActivitySignInBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-        // Get a reference to the ActionBar
-        ActionBar actionBar = getSupportActionBar();
-
-        // Check if the ActionBar is not null before using it
-        if (actionBar != null) {
-            // Now you can call methods on the ActionBar
-            actionBar.hide();
-        }
+        getSupportActionBar().hide();
         mAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
         progressDialog = new ProgressDialog(SignInActivity.this);
@@ -134,14 +126,14 @@ public class SignInActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Log.d("TAG", "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Users users=new Users();
+                            Users users = new Users();
                             users.setUserId(user.getUid());
                             users.setUserName(user.getDisplayName());
                             users.setProfile(user.getPhotoUrl().toString());
                             firebaseDatabase.getReference().child("Users").child(user.getUid()).setValue(users);
                             Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                             startActivity(intent);
-                            Toast.makeText(SignInActivity.this,"Sign in with Google",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignInActivity.this, "Sign in with Google", Toast.LENGTH_SHORT).show();
                         } else {
                             Log.w("TAG", "signInWithCredential:failure");
 
